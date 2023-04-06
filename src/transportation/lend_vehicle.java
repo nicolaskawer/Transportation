@@ -15,8 +15,15 @@ public abstract class  lend_vehicle extends  transport{
     public String getPath(){
         return path;
     }
+
+    @Override
+    public boolean equals(transport obj) {
+         if(!super.equals(obj))
+             return false;
+         return obj.path == path && obj.wheels== wheels;
+    }
+
     public String toString(){
-        super.toString();
-        return "number of wheels: "+wheels+", can drive on: "+path;
+        return super.toString()+"number of wheels: "+wheels+", can drive on: "+path;
     }
 }

@@ -12,9 +12,16 @@ public abstract class air_vehicles extends transport {
     public void setInformation(String info){
         information = info;
     }
+
+    @Override
+    public boolean equals(transport obj) {
+         if (!super.equals(obj))
+             return false;
+         return information == obj.information;
+    }
+
     public String toString(){
-        super.toString();
-        return "this is an "+information+" vehicle";
+        return super.toString()+ "this is an "+information+" vehicle";
     }
 
 }

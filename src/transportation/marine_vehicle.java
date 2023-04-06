@@ -8,6 +8,20 @@ public abstract class marine_vehicle extends  transport{
         flag = flag1;
         selling_direction = directon;
     }
+////////////////////////////////////////////////////////////////////////////
+    @Override
+    public boolean equals(transport obj) {
+         if(!super.equals(obj))
+             return false;
+         return obj.flag == flag&& obj.selling_direction;
+    }
+    ///////////////////////////////////////////////////////////////////////
+    public String toString(){
+
+        if (selling_direction)
+            return super.toString()+". Under "+flag+" flag, with the wind";
+        return super.toString()+". Under "+flag+" flag, against the wind";
+    }
     public String getFlag(){
         return flag;
     }
