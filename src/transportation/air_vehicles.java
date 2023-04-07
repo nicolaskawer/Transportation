@@ -14,10 +14,13 @@ public abstract class air_vehicles extends transport {
     }
 
     @Override
-    public boolean equals(transport obj) {
+    public boolean equals(Object obj) {
          if (!super.equals(obj))
              return false;
-         return information == obj.information;
+        if (!(obj instanceof air_vehicles))
+            return false;
+        air_vehicles temp = (air_vehicles) obj;
+         return information == temp.information;
     }
 
     public String toString(){

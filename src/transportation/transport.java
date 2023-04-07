@@ -1,4 +1,5 @@
 package transportation;
+import java.util.Objects;
 
 public abstract class transport {
     private String name;
@@ -18,13 +19,15 @@ public abstract class transport {
     }
 
 
-    public boolean equals(transport obj)
+    public boolean equals(Object obj)
     {
         if(this == obj)
             return true;
-        if (name == obj.name && KM == obj.KM && max_sits == obj.max_sits && max_speed == obj.max_speed)
-            return true;
-        return false;
+        if (!(obj instanceof transport))
+            return false;
+        transport temp = (transport) obj;
+        return (KM == temp.KM && max_sits == temp.max_sits && max_speed == temp.max_speed && Objects.equals(this.name, temp.name));
+
 
     }
     public abstract void update(float km);

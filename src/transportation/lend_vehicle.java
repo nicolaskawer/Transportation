@@ -17,10 +17,13 @@ public abstract class  lend_vehicle extends  transport{
     }
 
     @Override
-    public boolean equals(transport obj) {
+    public boolean equals(Object obj) {
          if(!super.equals(obj))
              return false;
-         return obj.path == path && obj.wheels== wheels;
+        if (!(obj instanceof lend_vehicle))
+            return false;
+        lend_vehicle temp = (lend_vehicle) obj;
+         return temp.path == path && temp.wheels== wheels;
     }
 
     public String toString(){

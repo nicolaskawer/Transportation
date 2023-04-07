@@ -8,14 +8,15 @@ public abstract class marine_vehicle extends  transport{
         flag = flag1;
         selling_direction = directon;
     }
-////////////////////////////////////////////////////////////////////////////
     @Override
-    public boolean equals(transport obj) {
+    public boolean equals(Object obj) {
          if(!super.equals(obj))
              return false;
-         return obj.flag == flag&& obj.selling_direction;
+        if (!(obj instanceof marine_vehicle))
+            return false;
+        marine_vehicle temp = (marine_vehicle) obj;
+         return temp.flag == flag&& temp.selling_direction;
     }
-    ///////////////////////////////////////////////////////////////////////
     public String toString(){
 
         if (selling_direction)
