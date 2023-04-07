@@ -1,16 +1,16 @@
 package transportation;
 
 public abstract class air_vehicles extends transport {
-    private String information;// think it has to be enum
-    public air_vehicles(String n1, float km, int sits1, float speed, String info){
+    private information info;
+    public air_vehicles(String n1, float km, int sits1, float speed, information info1){
         super(n1, km, sits1, speed);
-        information = info;
+        info = info1;
     }
-    public String getInformation(){
-        return information;
+    public information getInformation(){
+        return info;
     }
-    public void setInformation(String info){
-        information = info;
+    public void setInformation(information info1){
+        info = info1;
     }
 
     @Override
@@ -20,11 +20,11 @@ public abstract class air_vehicles extends transport {
         if (!(obj instanceof air_vehicles))
             return false;
         air_vehicles temp = (air_vehicles) obj;
-         return information == temp.information;
+         return info == temp.info;
     }
 
     public String toString(){
-        return super.toString()+ "this is an "+information+" vehicle";
+        return super.toString()+ "this is an "+info+" vehicle";
     }
 
 }

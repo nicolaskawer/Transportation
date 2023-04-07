@@ -2,9 +2,9 @@ package transportation;
 
 public abstract class  lend_vehicle extends  transport{
     private int wheels;
-    private String path; //maybe will do it as an enum
+    private Path path;
 
-    public lend_vehicle(String n1, float km, int sits1, float speed, String path1, int wheels1){
+    public lend_vehicle(String n1, float km, int sits1, float speed, Path path1, int wheels1){
         super(n1, km, sits1, speed);
         wheels = wheels1;
         path = path1;
@@ -12,7 +12,7 @@ public abstract class  lend_vehicle extends  transport{
     public int getWheels(){
         return wheels;
     }
-    public String getPath(){
+    public Path getPath(){
         return path;
     }
 
